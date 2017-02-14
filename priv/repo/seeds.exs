@@ -58,9 +58,9 @@ objects = [
 Enum.map(
   1..100,
   fn _ ->
-    actor = Enum.at(actors, :rand.uniform(Enum.count(actors)))
-    verb = Enum.at(verbs, :rand.uniform(Enum.count(verbs)))
-    object = Enum.at(objects, :rand.uniform(Enum.count(objects)))
+    actor = Enum.at(actors, :rand.uniform(Enum.count(actors) - 1))
+    verb = Enum.at(verbs, :rand.uniform(Enum.count(verbs) - 1))
+    object = Enum.at(objects, :rand.uniform(Enum.count(objects) - 1))
 
     LearningRecordStoreApi.Repo.insert!(
       %LearningRecordStoreApi.Statement{

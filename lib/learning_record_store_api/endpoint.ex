@@ -36,5 +36,7 @@ defmodule LearningRecordStoreApi.Endpoint do
     key: "_learning_record_store_api_key",
     signing_salt: "S4dG5ya2"
 
+  plug Corsica, origins: "*", allow_headers: ["content-type"]
+
   plug LearningRecordStoreApi.Router
 end

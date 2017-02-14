@@ -5,7 +5,7 @@ defmodule LearningRecordStoreApi.StatementResolver do
 
   def find(%{id: id}, _info) do
     case Repo.get(Statement, id) do
-      nil  -> {:error, "Step id #{id} not found"}
+      nil  -> {:error, "Statement id #{id} not found"}
       step -> {:ok, step}
     end
   end
